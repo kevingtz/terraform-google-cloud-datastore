@@ -34,8 +34,12 @@ Argument Reference:
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|:----:|:-----:|:-----:|
-| indexes | The contents of a index.yaml file, to apply indexes from | string | n/a | yes |
-| project | The project id | string | n/a | yes |
+|------|-------------|------|---------|:--------:|
+| indexes | The contents of a index.yaml file, to apply indexes from | `string` | n/a | yes |
+| project | The project id | `string` | n/a | yes |
+
+## Outputs
+
+No output.
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
