@@ -14,10 +14,6 @@
  * limitations under the License.
  */
 
-provider "google" {
-  version = "2.18.0"
-}
-
 module "datastore" {
   source  = "../../"
   project = var.project
