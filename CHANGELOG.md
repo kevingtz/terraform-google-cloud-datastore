@@ -21,21 +21,21 @@ Extending the adopted spec, each change should have a link to its corresponding 
 
 ## [0.2.0] - 2019-02-21
 ### CHANGED
-- Converted test coverage to use kitchen-terraform. [#3](https://github.com/terraform-google-modules/terraform-google-cloud-datastore/pull/3)
+- Converted test coverage to use kitchen-terraform. [#3](https://github.com/terraform-google-modules/terraform-google-cloud-firestore/pull/3)
 
 ### ADDED
-- Added test coverage for outputs. [#5](https://github.com/terraform-google-modules/terraform-google-cloud-datastore/pull/5)
+- Added test coverage for outputs. [#5](https://github.com/terraform-google-modules/terraform-google-cloud-firestore/pull/5)
 
 ### FIXED
-- Hook to update indexes on changes. [#6](https://github.com/terraform-google-modules/terraform-google-cloud-datastore/pull/6)
+- Hook to update indexes on changes. [#6](https://github.com/terraform-google-modules/terraform-google-cloud-firestore/pull/6)
 
 ## [0.1.0] - 2018-09-14
 ### ADDED
 - This is the initial release of the Project Factory Module.
 
-[Unreleased]: https://github.com/terraform-google-modules/terraform-google-cloud-datastore/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/terraform-google-modules/terraform-google-cloud-datastore/compare/v0.2.0...v1.0.0
-[0.2.0]: https://github.com/terraform-google-modules/terraform-google-cloud-datastore/compare/v0.1.0...v0.2.0
-[0.1.0]: https://github.com/terraform-google-modules/terraform-google-cloud-datastore/compare/eba169975e2038f3e721b8a6c5f67c2330998b37...v0.1.0
-[#16]: https://github.com/terraform-google-modules/terraform-google-cloud-datastore/pull/16
-[#12]: https://github.com/terraform-google-modules/terraform-google-cloud-datastore/pull/12
+[Unreleased]: https://github.com/terraform-google-modules/terraform-google-cloud-firestore/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/terraform-google-modules/terraform-google-cloud-firestore/compare/v0.2.0...v1.0.0
+[0.2.0]: https://github.com/terraform-google-modules/terraform-google-cloud-firestore/compare/v0.1.0...v0.2.0
+[0.1.0]: https://github.com/terraform-google-modules/terraform-google-cloud-firestore/compare/eba169975e2038f3e721b8a6c5f67c2330998b37...v0.1.0
+[#16]: https://github.com/terraform-google-modules/terraform-google-cloud-firestore/pull/16
+[#12]: https://github.com/terraform-google-modules/terraform-google-cloud-firestore/pull/12

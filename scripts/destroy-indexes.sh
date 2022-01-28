@@ -29,4 +29,4 @@ fi
 PROJECT=$1
 INDEXES_FILE=$2
 
-gcloud datastore indexes cleanup "$INDEXES_FILE" --project="$PROJECT" --quiet
+gcloud firestore indexes cleanup "$INDEXES_FILE" --project="$PROJECT" --quiet

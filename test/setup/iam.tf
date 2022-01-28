@@ -19,10 +19,10 @@ locals {
     "roles/owner",
     "roles/storage.admin",
     "roles/appengine.appAdmin",
-    "roles/datastore.owner",
-    "roles/datastore.importExportAdmin",
-    "roles/datastore.indexAdmin",
-    "roles/datastore.user",
+    "roles/firestore.owner",
+    "roles/firestore.importExportAdmin",
+    "roles/firestore.indexAdmin",
+    "roles/firestore.user",
   ]
 }
 

@@ -38,4 +38,4 @@ suites:
         - name: simple_example
           backend: local
           controls:
-            - gcloud_datastore
+            - gcloud_firestore

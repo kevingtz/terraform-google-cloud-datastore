@@ -18,7 +18,7 @@ provider "google" {
   version = "2.18.0"
 }
 
-module "datastore" {
+module "firestore" {
   source  = "../../"
   project = var.project
   indexes = data.null_data_source.dependency.outputs.indexes

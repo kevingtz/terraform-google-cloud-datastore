@@ -19,18 +19,18 @@ locals {
   null_index_path_file = "${path.module}/null_index/index.yaml"
 }
 
-resource "local_file" "cloud-datastore-index-file" {
+resource "local_file" "cloud-firestore-index-file" {
   content  = var.indexes
   filename = local.path_file
 }
 
-resource "null_resource" "cloud-datastore-indices" {
+resource "null_resource" "cloud-firestore-indices" {
   triggers = {
-    changes_in_index_file = sha1(local_file.cloud-datastore-index-file.content)
+    changes_in_index_file = sha1(local_file.cloud-firestore-index-file.content)
   }
 
   provisioner "local-exec" {
-    command = "${path.module}/scripts/create-indexes.sh '${var.project}' '${local_file.cloud-datastore-index-file.filename}'"
+    command = "${path.module}/scripts/create-indexes.sh '${var.project}' '${local_file.cloud-firestore-index-file.filename}'"
   }
 
   provisioner "local-exec" {

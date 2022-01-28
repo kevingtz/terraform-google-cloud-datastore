@@ -13,31 +13,31 @@
 # limitations under the License.
 
 project_id = attribute("project_id", default: ENV["TF_VAR_project"])
-control "gcloud_datastore" do
-  title "Check if datastore has correct indexes"
+control "gcloud_firestore" do
+  title "Check if firestore has correct indexes"
   # Ensure first index is type 'Task'
-  describe command("gcloud --project='#{project_id}' datastore indexes list --filter='properties[0].name=done' --format=json --quiet | jq -jce '.[0].kind'") do
+  describe command("gcloud --project='#{project_id}' firestore indexes list --filter='properties[0].name=done' --format=json --quiet | jq -jce '.[0].kind'") do
     its('exit_status') { should eq 0 }
     its('stderr') { should eq '' }
     its('stdout') { should eq 'Task' }
   end
 
   # Ensure first index has expected properties
-  describe command("gcloud --project='#{project_id}' datastore indexes list --filter='properties[0].name=done' --format=json --quiet | jq -jce '.[0].properties'") do
+  describe command("gcloud --project='#{project_id}' firestore indexes list --filter='properties[0].name=done' --format=json --quiet | jq -jce '.[0].properties'") do
     its('exit_status') { should eq 0 }
     its('stderr') { should eq '' }
     its('stdout') { should eq '[{"direction":"ASCENDING","name":"done"},{"direction":"DESCENDING","name":"priority"}]' }
   end
 
   # Ensure second index is type 'Task'
-  describe command("gcloud --project='#{project_id}' datastore indexes list --filter='properties[0].name=collaborators' --format=json --quiet | jq -jce '.[0].kind'") do
+  describe command("gcloud --project='#{project_id}' firestore indexes list --filter='properties[0].name=collaborators' --format=json --quiet | jq -jce '.[0].kind'") do
     its('exit_status') { should eq 0 }
     its('stderr') { should eq '' }
     its('stdout') { should eq 'Task' }
   end
 
   # Ensure second index has expected properties
-  describe command("gcloud --project='#{project_id}' datastore indexes list --filter='properties[0].name=collaborators' --format=json --quiet | jq -jce '.[0].properties'") do
+  describe command("gcloud --project='#{project_id}' firestore indexes list --filter='properties[0].name=collaborators' --format=json --quiet | jq -jce '.[0].properties'") do
     its('exit_status') { should eq 0 }
     its('stderr') { should eq '' }
     its('stdout') { should eq '[{"direction":"ASCENDING","name":"collaborators"},{"direction":"DESCENDING","name":"created"}]' }

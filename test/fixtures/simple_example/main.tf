@@ -18,7 +18,7 @@ provider "google" {
   version = "2.18.0"
 }
 
-module "datastore" {
+module "firestore" {
   source            = "../../../examples/simple_example"
   project           = var.project_id
   indexes_file_path = "${path.module}/yaml/index.yaml"
