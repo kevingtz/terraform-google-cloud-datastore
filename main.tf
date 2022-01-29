@@ -24,17 +24,17 @@ resource "local_file" "cloud-firestore-index-file" {
   filename = local.path_file
 }
 
-resource "null_resource" "cloud-firestore-indices" {
-  triggers = {
-    changes_in_index_file = sha1(local_file.cloud-firestore-index-file.content)
-  }
+# resource "null_resource" "cloud-firestore-indices" {
+#   triggers = {
+#     changes_in_index_file = sha1(local_file.cloud-firestore-index-file.content)
+#   }
 
-  provisioner "local-exec" {
-    command = "${path.module}/scripts/create-indexes.sh '${var.project}' '${local_file.cloud-firestore-index-file.filename}'"
-  }
+#   provisioner "local-exec" {
+#     command = "${path.module}/scripts/create-indexes.sh '${var.project}' '${local_file.cloud-firestore-index-file.filename}'"
+#   }
 
-  provisioner "local-exec" {
-    command = "${path.module}/scripts/destroy-indexes.sh '${var.project}' '${local.null_index_path_file}'"
-    when    = "destroy"
-  }
-}
+#   provisioner "local-exec" {
+#     command = "${path.module}/scripts/destroy-indexes.sh '${var.project}' '${local.null_index_path_file}'"
+#     when    = "destroy"
+#   }
+# }
