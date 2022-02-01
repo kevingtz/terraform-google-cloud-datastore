@@ -31,5 +31,5 @@ fi
 PROJECT=$1
 INDEXES_FILE=$2
 
-gcloud firestore indexes cleanup "$INDEXES_FILE" --project="$PROJECT" --quiet
-gcloud firestore indexes create "$INDEXES_FILE" --project="$PROJECT" --quiet
+gcloud firestore indexes composite delete "$INDEXES_FILE" --project="$PROJECT" --quiet
+gcloud firestore indexes composite create "$INDEXES_FILE" --project="$PROJECT" --quiet
